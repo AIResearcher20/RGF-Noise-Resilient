@@ -2,7 +2,7 @@ import torch
 import yaml
 
 from experiments.benchmark import run_experiments
-from experiments.noise import noise_experiment
+from experiments.noise_experiment import noise_experiment
 from models.gcn import GCN
 from models.gat import GAT
 from models.rngf import RNGF
