@@ -7,6 +7,8 @@ from models.gcn import GCN
 from models.gat import GAT
 from models.rngf import RNGF
 
+from utils.logger import save_json   # ✅ اضافه شد
+
 
 def load_config(path="configs/wisconsin.yaml"):
     with open(path, "r") as f:
@@ -62,7 +64,7 @@ def main():
     noise_results = noise_experiment(
         RNGF,
         X, A,
-        None,   # بعداً fix می‌کنیم
+        None,   # (فعلاً همون کدی که خودت داشتی، تغییر ندادم)
         y,
         train_mask, val_mask, test_mask,
         noise_levels=config["noise"]["levels"]
@@ -73,9 +75,19 @@ def main():
     print("====================")
 
     for k, v in results.items():
-        print(k, sum(v)/len(v))
+        print(k, sum(v) / len(v))
 
     print("\nNoise:", noise_results)
+
+    # =========================
+    # ✅ SAVE OUTPUT (NEW)
+    # =========================
+    final_output = {
+        "benchmark": results,
+        "noise": noise_results
+    }
+
+    save_json(final_output)
 
 
 if __name__ == "__main__":
