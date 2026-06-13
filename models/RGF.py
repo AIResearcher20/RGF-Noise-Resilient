@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-class RNGF(nn.Module):
+class RGF(nn.Module):
     def __init__(self, in_dim, hidden_dim, num_classes):
         super().__init__()
         self.lin = nn.Linear(in_dim, hidden_dim)
