@@ -13,13 +13,20 @@ def load_config(path="configs/wisconsin.yaml"):
         return yaml.safe_load(f)
 
 
+def build_model(model_class, X, y, config):
+    return model_class(
+        X.shape[1],
+        config["model"]["hidden_dim"],
+        int(y.max().item()) + 1
+    )
+
+
 def main():
 
     config = load_config()
 
     print("\n🚀 RGF FULL PIPELINE START\n")
 
-    # Load data
     X = torch.load(config["data"]["X"])
     A = torch.load(config["data"]["A"])
     y = torch.load(config["data"]["y"])
@@ -40,21 +47,14 @@ def main():
 
     for name, model_class in models.items():
 
-        model = model_class(
-            X.shape[1],
-            config["model"]["hidden_dim"],
-            int(y.max().item()) + 1
-        )
-
         accs = run_experiments(
-            lambda: model,
+            lambda: build_model(model_class, X, y, config),
             X, A, y,
             train_mask, val_mask, test_mask,
             n_runs=config["train"]["runs"]
         )
 
         results[name] = accs
-
         print(f"{name} done")
 
     print("\n📉 Noise experiments...\n")
@@ -62,7 +62,7 @@ def main():
     noise_results = noise_experiment(
         RNGF,
         X, A,
-        None,
+        None,   # بعداً fix می‌کنیم
         y,
         train_mask, val_mask, test_mask,
         noise_levels=config["noise"]["levels"]
