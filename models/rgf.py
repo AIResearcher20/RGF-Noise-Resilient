@@ -12,9 +12,6 @@ class RGF(nn.Module):
     def forward(self, X, A):
         X1 = F.relu(self.lin(X))
         X2 = F.relu(self.lin(A @ X))
-
         g = torch.sigmoid(self.gate(torch.cat([X1, X2], dim=1)))
-
         H = g * X1 + (1 - g) * X2
-
         return self.classifier(H)
