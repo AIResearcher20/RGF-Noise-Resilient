@@ -9,4 +9,5 @@ RUN pip install -r requirements.txt
 
 ENV PYTHONPATH=/app
 
-CMD ["python", "run.py", "--config", "configs/default.yaml"]
+# اجرای آزمایش Wisconsin
+CMD ["python", "experiments/run_wisconsin.py"]
