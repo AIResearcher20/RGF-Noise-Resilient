@@ -80,6 +80,6 @@
 ### Installation
 
 ```bash
-git clone https://github.com/vaniakarimi/RGF-Noise-Resilient.git
+git clone https://github.com/AIRESEARCHER20/RGF-Noise-Resilient.git
 cd RGF-Noise-Resilient
 pip install -r requirements.txt
