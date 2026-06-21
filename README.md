@@ -1,33 +1,21 @@
 <div align="center">
 
-<!-- OPTIONAL LOGO PLACEHOLDER (replace with your real SVG later) -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Graph_database_icon.svg" width="150"/>
+# 🧠 Residual Graph Fusion (RGF)
 
-# 🧠 RGF: Residual Graph Fusion  
-
-### 🧬 A Gated Residual Graph Neural Architecture for Robust Learning on Noisy & Heterophilic Graphs
+### A Lightweight Residual-Gated Graph Neural Network for Heterophilic & Noisy Graph Learning
 
 ---
 
-### 🔬 Summary
-A lightweight yet expressive graph learning framework that integrates **residual message passing** with a **gated fusion mechanism** to balance structural locality and global contextualization in heterogeneous graph environments.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-GNN-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![PyTorch Geometric](https://img.shields.io/badge/PyG-Graph_Learning-orange?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Research--Grade-blueviolet?style=flat-square)
+![Domain](https://img.shields.io/badge/Domain-Graph_Neural_Networks-2ea44f?style=flat-square)
 
 ---
 
-### ⚙️ Key Features
-- 🔁 Residual Graph Fusion for stable deep message passing  
-- 🧠 Adaptive gating between heterogeneous representations  
-- 🌐 Robust performance on noisy / heterophilic graph benchmarks  
-- 📊 Strong empirical results across multiple citation network datasets  
-- ⚡ Lightweight and scalable architecture  
-
----
-
-### 🧪 Tech Stack
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-GNN-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![PyG](https://img.shields.io/badge/PyTorch%20Geometric-Framework-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
+### 🔬 Heterophily • Robust Learning • Residual Fusion • Graph AI
 
 ---
 
