@@ -1,19 +1,39 @@
 <div align="center">
 
-<!-- Scientific Neural Graph Logo -->
-<img src="https://raw.githubusercontent.com/yourusername/assets/main/rgf_logo.svg" width="180"/>
+<!-- OPTIONAL LOGO PLACEHOLDER (replace with your real SVG later) -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Graph_database_icon.svg" width="150"/>
 
 # 🧠 RGF: Residual Graph Fusion  
 
-### 🧬 A Gated Graph Neural Architecture for Robust Learning on Noisy Heterophilic Networks
+### 🧬 A Gated Residual Graph Neural Architecture for Robust Learning on Noisy & Heterophilic Graphs
 
 ---
 
+### 🔬 Summary
+A lightweight yet expressive graph learning framework that integrates **residual message passing** with a **gated fusion mechanism** to balance structural locality and global contextualization in heterogeneous graph environments.
+
+---
+
+### ⚙️ Key Features
+- 🔁 Residual Graph Fusion for stable deep message passing  
+- 🧠 Adaptive gating between heterogeneous representations  
+- 🌐 Robust performance on noisy / heterophilic graph benchmarks  
+- 📊 Strong empirical results across multiple citation network datasets  
+- ⚡ Lightweight and scalable architecture  
+
+---
+
+### 🧪 Tech Stack
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-GNN-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![Graph Learning](https://img.shields.io/badge/Graph-Neural%20Networks-00C2FF?style=for-the-badge)
-![Status](https://img.shields.io/badge/Research-Submission%20Ready-success?style=for-the-badge)
+![PyG](https://img.shields.io/badge/PyTorch%20Geometric-Framework-orange?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
+
+---
+
+### 📦 Status
+![Research](https://img.shields.io/badge/Status-Research%20Project-blueviolet?style=for-the-badge)
+![Submission](https://img.shields.io/badge/Stage-NeurIPS%2FICLR%20Ready-success?style=for-the-badge)
 
 ---
 
