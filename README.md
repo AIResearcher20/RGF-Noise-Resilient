@@ -17,14 +17,6 @@
 
 ### 🔬 Heterophily • Robust Learning • Residual Fusion • Graph AI
 
----
-
-### 📦 Status
-![Research](https://img.shields.io/badge/Status-Research%20Project-blueviolet?style=for-the-badge)
-![Submission](https://img.shields.io/badge/Stage-NeurIPS%2FICLR%20Ready-success?style=for-the-badge)
-
----
-
 </div>
 ---
 
