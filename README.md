@@ -1,19 +1,23 @@
 <div align="center">
 
-# 🧠 RGF: Residual Graph Fusion
+<!-- Scientific Neural Graph Logo -->
+<img src="https://raw.githubusercontent.com/yourusername/assets/main/rgf_logo.svg" width="180"/>
 
-### *A Lightweight Gated Architecture for Node Classification on Noisy Heterophilic Graphs*
+# 🧠 RGF: Residual Graph Fusion  
 
-<br>
+### 🧬 A Gated Graph Neural Architecture for Robust Learning on Noisy Heterophilic Networks
 
-[![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/vaniakarimi)
+---
+
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-GNN-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Graph Learning](https://img.shields.io/badge/Graph-Neural%20Networks-00C2FF?style=for-the-badge)
+![Status](https://img.shields.io/badge/Research-Submission%20Ready-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
+
+---
 
 </div>
-
 ---
 
 ## 📌 Overview
