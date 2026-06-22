@@ -57,49 +57,27 @@
 
 ### Mathematical Formulation
 
-The core of the model follows a three-step process:
+Mathematical Formulation
 
-### 1. Feature Transformation
-Local and neighborhood features are extracted using separate linear transformations, followed by ReLU activation:
+Step
+Equation
+Feature Transformation
+$\mathbf{H}_{local} = \text{ReLU}(\mathbf{X}\mathbf{W}1), \quad \mathbf{H}{neigh} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$
+Gated Fusion
+$\mathbf{g} = \sigma([\mathbf{H}{local} \mid \mathbf{H}{neigh}] \mathbf{W}_2)$
+Classification
+�^=softmax(��3)
 
-$$
-\mathbf{H}_{\text{local}} = \text{ReLU}(\mathbf{X} \mathbf{W}_1)
-$$
+Mathematical Formulation
 
-$$
-\mathbf{H}_{\text{neigh}} = \text{ReLU}(\hat{\mathbf{A}} \mathbf{X} \mathbf{W}_1)
-$$
-
-> **Note:** Both transformations share the same weight matrix $\mathbf{W}_1$.
-
----
-
-### 2. Gated Fusion
-A gating mechanism adaptively combines local and neighborhood representations:
-
-$$
-\mathbf{g} = \sigma\left([\mathbf{H}_{\text{local}} \mid \mathbf{H}_{\text{neigh}}] \, \mathbf{W}_2\right)
-$$
-
-$$
-\mathbf{H} = \mathbf{g} \odot \mathbf{H}_{\text{local}} + (\mathbf{1} - \mathbf{g}) \odot \mathbf{H}_{\text{neigh}}
-$$
-
-Where:
-- $[\cdot \mid \cdot]$ denotes **concatenation**
-- $\sigma$ is the **sigmoid** activation function
-- $\odot$ is **element-wise multiplication**
-- $\mathbf{1}$ is the all‑ones vector
-
----
-
-### 3. Classification
-The final representation is passed through a softmax layer for multi-class prediction:
-
-$$
-\hat{\mathbf{Y}} = \text{softmax}(\mathbf{H} \mathbf{W}_3)
-$$
-
+Step
+Equation
+Feature Transformation
+$\mathbf{H}_{\text{local}} = \text{ReLU}(\mathbf{X}\mathbf{W}1),\quad \mathbf{H}{\text{neigh}} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$
+Gated Fusion
+$\mathbf{g} = \sigma([\mathbf{H}{\text{local}} | \mathbf{H}{\text{neigh}}]\mathbf{W}2),\quad \mathbf{H} = \mathbf{g} \odot \mathbf{H}{\text{local}} + (\mathbf{1}n - \mathbf{g}) \odot \mathbf{H}{\text{neigh}}$
+Classification
+�^=softmax(��3)
 ---
 
 ## Summary of Parameters
