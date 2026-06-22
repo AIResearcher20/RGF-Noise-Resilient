@@ -51,10 +51,19 @@
 
 ## 🏗️ Architecture
 
-<div 
-  ### 🏗️ RGF Architecture
+## 🏗️ Architecture
+
+### RGF Architecture
+
 ![RGF Architecture](Feature/rgf_architecture_clean.png)
-</div>
+
+### Mathematical Formulation
+
+| Step | Equation |
+|------|----------|
+| **Feature Transformation** | $\mathbf{H}_{local} = \text{ReLU}(\mathbf{X}\mathbf{W}_1), \quad \mathbf{H}_{neigh} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$ |
+| **Gated Fusion** | $\mathbf{g} = \sigma([\mathbf{H}_{local} \mid \mathbf{H}_{neigh}] \mathbf{W}_2)$ |
+| **Classification** | $\hat{Y} = \text{softmax}(\mathbf{H}\mathbf{W}_3)$ |
 
 ### Mathematical Formulation
 
