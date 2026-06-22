@@ -56,36 +56,62 @@
 ![RGF Architecture](Feature/rgf_architecture_clean.png)
 
 ### Mathematical Formulation
-### Mathematical Formulation
 
-#### Feature Transformation
-$$
-\mathbf{H}_{local} = \mathrm{ReLU}(\mathbf{X}\mathbf{W}_1)
-$$
+The core of the model follows a three-step process:
 
-$$
-\mathbf{H}_{neigh} = \mathrm{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)
-$$
-
-#### Gated Fusion
+### 1. Feature Transformation
+Local and neighborhood features are extracted using separate linear transformations, followed by ReLU activation:
 
 $$
-\mathbf{g} = \sigma([\mathbf{H}_{local} \mid \mathbf{H}_{neigh}] \mathbf{W}_2)
+\mathbf{H}_{\text{local}} = \text{ReLU}(\mathbf{X} \mathbf{W}_1)
 $$
 
 $$
-\mathbf{H}
-=
-\mathbf{g}\odot\mathbf{H}_{local}
-+
-(1-\mathbf{g})\odot\mathbf{H}_{neigh}
+\mathbf{H}_{\text{neigh}} = \text{ReLU}(\hat{\mathbf{A}} \mathbf{X} \mathbf{W}_1)
 $$
 
-#### Classification
+> **Note:** Both transformations share the same weight matrix $\mathbf{W}_1$.
+
+---
+
+### 2. Gated Fusion
+A gating mechanism adaptively combines local and neighborhood representations:
 
 $$
-\hat{\mathbf{Y}} = \mathrm{softmax}(\mathbf{H}\mathbf{W}_3)
+\mathbf{g} = \sigma\left([\mathbf{H}_{\text{local}} \mid \mathbf{H}_{\text{neigh}}] \, \mathbf{W}_2\right)
 $$
+
+$$
+\mathbf{H} = \mathbf{g} \odot \mathbf{H}_{\text{local}} + (\mathbf{1} - \mathbf{g}) \odot \mathbf{H}_{\text{neigh}}
+$$
+
+Where:
+- $[\cdot \mid \cdot]$ denotes **concatenation**
+- $\sigma$ is the **sigmoid** activation function
+- $\odot$ is **element-wise multiplication**
+- $\mathbf{1}$ is the all‑ones vector
+
+---
+
+### 3. Classification
+The final representation is passed through a softmax layer for multi-class prediction:
+
+$$
+\hat{\mathbf{Y}} = \text{softmax}(\mathbf{H} \mathbf{W}_3)
+$$
+
+---
+
+## Summary of Parameters
+
+| Symbol | Description |
+|--------|-------------|
+| $\mathbf{X}$ | Input feature matrix |
+| $\hat{\mathbf{A}}$ | Normalized adjacency matrix |
+| $\mathbf{W}_1, \mathbf{W}_2, \mathbf{W}_3$ | Learnable weight matrices |
+| $\mathbf{g}$ | Gate vector (values in $[0,1]$) |
+| $\mathbf{H}$ | Fused hidden representation |
+
 ---
 
 ## 📈 Visual Results
