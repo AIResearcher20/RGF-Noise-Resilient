@@ -49,9 +49,7 @@
 
 ---
 
-## 🏗️ Architecture
-
-## 🏗️ Architecture
+### 🏗️ Architecture
 
 ### RGF Architecture
 
