@@ -56,24 +56,37 @@
 ![RGF Architecture](Feature/rgf_architecture_clean.png)
 
 ### Mathematical Formulation
-
-| Step | Equation |
-|------|----------|
-| **Feature Transformation** | $\mathbf{H}_{local} = \text{ReLU}(\mathbf{X}\mathbf{W}_1), \quad \mathbf{H}_{neigh} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$ |
-| **Gated Fusion** | $\mathbf{g} = \sigma([\mathbf{H}_{local} \mid \mathbf{H}_{neigh}] \mathbf{W}_2)$ |
-| **Classification** | $\hat{Y} = \text{softmax}(\mathbf{H}\mathbf{W}_3)$ |
-
 ### Mathematical Formulation
 
-| Step | Equation |
-|:----:|:---------|
-| **Feature Transformation** | $\mathbf{H}_{\text{local}} = \text{ReLU}(\mathbf{X}\mathbf{W}_1),\quad \mathbf{H}_{\text{neigh}} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$ |
-| **Gated Fusion** | $\mathbf{g} = \sigma([\mathbf{H}_{\text{local}} \| \mathbf{H}_{\text{neigh}}]\mathbf{W}_2),\quad \mathbf{H} = \mathbf{g} \odot \mathbf{H}_{\text{local}} + (\mathbf{1}_n - \mathbf{g}) \odot \mathbf{H}_{\text{neigh}}$ |
-| **Classification** | $\hat{\mathbf{Y}} = \text{softmax}(\mathbf{H}\mathbf{W}_3)$ |
+#### Feature Transformation
+$$
+\mathbf{H}_{local} = \mathrm{ReLU}(\mathbf{X}\mathbf{W}_1)
+$$
 
+$$
+\mathbf{H}_{neigh} = \mathrm{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)
+$$
+
+#### Gated Fusion
+
+$$
+\mathbf{g} = \sigma([\mathbf{H}_{local} \mid \mathbf{H}_{neigh}] \mathbf{W}_2)
+$$
+
+$$
+\mathbf{H}
+=
+\mathbf{g}\odot\mathbf{H}_{local}
++
+(1-\mathbf{g})\odot\mathbf{H}_{neigh}
+$$
+
+#### Classification
+
+$$
+\hat{\mathbf{Y}} = \mathrm{softmax}(\mathbf{H}\mathbf{W}_3)
+$$
 ---
-
-## 📈 Visual Results
 
 ## 📈 Visual Results
 
