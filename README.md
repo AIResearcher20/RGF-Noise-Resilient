@@ -51,8 +51,9 @@
 
 ## 🏗️ Architecture
 
-<div align="center">
-<img src="figures/rgf_architecture_final.png" width="700">
+<div 
+  ### 🏗️ RGF Architecture
+![RGF Architecture](Feature/rgf_architecture_clean.png)
 </div>
 
 ### Mathematical Formulation
@@ -67,16 +68,34 @@
 
 ## 📈 Visual Results
 
-<div align="center">
-<table>
-<tr>
-<td align="center"><img src="figures/noise_sensitivity.png" width="250"><br><b>Noise Robustness</b></td>
-<td align="center"><img src="figures/accuracy_vs_params.png" width="250"><br><b>Accuracy vs Parameters</b></td>
-<td align="center"><img src="figures/gate_distribution.png" width="250"><br><b>Gate Distribution (μ=0.729)</b></td>
-</tr>
-</table>
-</div>
+## 📈 Visual Results
 
+### 🔗 Dataset Heterophily
+![Dataset Heterophily](Feature/dataset_heterophily.png)
+
+### 🛡️ Noise Sensitivity
+![Noise Sensitivity](Feature/noise_sensitivity.png)
+
+### ⚙️ Accuracy vs Parameters
+![Accuracy vs Parameters](Feature/accuracy_vs_params.png)
+
+### 📊 GGCN vs FSGNN vs RGF
+![Model Comparison](Feature/ggcn_fsgnn_comparison.png)
+
+### 📈 Journal Comparison with Error Bars
+![Journal Comparison](Feature/journal_comparison_with_errorbars.png)
+
+### 🚀 Computational Complexity
+![Computational Complexity](Feature/journal_complexity.png)
+
+### 🎛️ Sensitivity Analysis
+![Sensitivity Analysis](Feature/sensitivity_analysis.png)
+
+### 🔄 Run Stability
+![Run Stability](Feature/run_stability.png)
+
+### 🏆 Performance Across All Datasets
+![All Datasets](Feature/rgf_all_datasets_final.png)
 ---
 
 ## 🚀 Quick Start
