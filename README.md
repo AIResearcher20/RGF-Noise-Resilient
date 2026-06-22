@@ -57,27 +57,50 @@
 
 ### Mathematical Formulation
 
-Mathematical Formulation
+## Mathematical Formulation
 
-Step
-Equation
-Feature Transformation
-$\mathbf{H}_{local} = \text{ReLU}(\mathbf{X}\mathbf{W}1), \quad \mathbf{H}{neigh} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$
-Gated Fusion
-$\mathbf{g} = \sigma([\mathbf{H}{local} \mid \mathbf{H}{neigh}] \mathbf{W}_2)$
-Classification
-�^=softmax(��3)
+### 1. Feature Transformation
 
-Mathematical Formulation
+Local node representation:
 
-Step
-Equation
-Feature Transformation
-$\mathbf{H}_{\text{local}} = \text{ReLU}(\mathbf{X}\mathbf{W}1),\quad \mathbf{H}{\text{neigh}} = \text{ReLU}(\hat{\mathbf{A}}\mathbf{X}\mathbf{W}_1)$
-Gated Fusion
-$\mathbf{g} = \sigma([\mathbf{H}{\text{local}} | \mathbf{H}{\text{neigh}}]\mathbf{W}2),\quad \mathbf{H} = \mathbf{g} \odot \mathbf{H}{\text{local}} + (\mathbf{1}n - \mathbf{g}) \odot \mathbf{H}{\text{neigh}}$
-Classification
-�^=softmax(��3)
+\[
+h_{\text{local}} = \mathrm{ReLU}(XW_1)
+\]
+
+Neighborhood representation:
+
+\[
+h_{\text{neigh}} = \mathrm{ReLU}(\hat{A}XW_1)
+\]
+
+### 2. Gated Fusion
+
+The gating mechanism is computed as:
+
+\[
+g = \sigma\left([h_{\text{local}} \, \| \, h_{\text{neigh}}]W_2\right)
+\]
+
+The fused representation is:
+
+\[
+h = g \odot h_{\text{local}}
++ (1-g) \odot h_{\text{neigh}}
+\]
+
+where:
+
+- \(\sigma(\cdot)\) denotes the sigmoid function.
+- \(\|\) represents vector concatenation.
+- \(\odot\) denotes element-wise multiplication.
+
+### 3. Classification
+
+The final prediction is obtained by:
+
+\[
+\hat{y} = \mathrm{softmax}(hW_3)
+\]
 ---
 
 ## Summary of Parameters
